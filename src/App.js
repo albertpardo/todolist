@@ -5,7 +5,7 @@ import { DataStore } from '@aws-amplify/datastore';
 import { Todo } from './models';
 
 
-async function data() {
+async function create_data() {
   // Create
   await DataStore.save(
     new Todo({
@@ -13,17 +13,23 @@ async function data() {
 		"description": "Lorem ipsum dolor sit amet"
 	})
   );
-	
-  // Query
-  const models = await DataStore.query(Todo);
-  console.log(models);
 }
 
 
+async function query() {
+
+    // Query
+  const models = await DataStore.query(Todo);
+  console.log(models);
+
+}
+
+
+
 function App() {
-
-  data()
-
+  create_data()
+  query()
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -31,6 +37,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -39,7 +46,9 @@ function App() {
         >
           Learn React
         </a>
+
       </header>
+ 
     </div>
   );
 }
