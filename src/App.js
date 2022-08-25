@@ -46,6 +46,9 @@ function App() {
         >
           Learn React
         </a>
+        <p>
+         Ejecutandose en AWS con Amplify
+        </p>
 
       </header>
  
